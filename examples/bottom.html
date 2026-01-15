@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>=^.^=</title>
+<style>
+.Panel{
+	position: fixed;
+	inset: auto 0 0;
+	border: 2px solid #000;
+	padding: 10px;
+	background: #FFF;
+	transition: transform 0.3s ease-in-out;
+}
+
+.Panel__Content {
+	max-height: 200px;
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+}
+</style>
+</head>
+<body>
+
+<button
+	type="button"
+	class="OpenButton"
+>open</button>
+
+<div class="Panel">
+
+	<button
+		type="button"
+		class="Panel__CloseButton"
+	>x</button>
+
+	<div class="Panel__Content">
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		<button type="button" onclick="alert('clicked')">button</button>
+		<a href="https://example.com" target="_blank">link</a>
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+		panel content panel content panel content panel content panel content panel content panel content panel content
+	</div>
+</div>
+
+
+<script type="module">
+import { SheetDraggable } from '../dist/sheet-draggable.module.js';
+
+const openButtonEl = document.querySelector( '.OpenButton' );
+const panelEl = document.querySelector( '.Panel' );
+const closeButtonEl = panelEl.querySelector( '.Panel__CloseButton' );
+
+const sheet = new SheetDraggable( panelEl, { side: 'bottom' } );
+
+openButtonEl.addEventListener( 'click', () => sheet.show() );
+closeButtonEl.addEventListener( 'click', () => sheet.hide() );
+
+sheet.addEventListener( 'show', () => {
+	console.log( 'shown' );
+} );
+
+sheet.addEventListener( 'hide', () => {
+	console.log( 'hidden' );
+} );
+
+</script>
+
+</body>
+</html>
