@@ -8,8 +8,6 @@ It ships only the drag-to-close behavior (no UI), and can be used standalone or 
 
 ## demos
 
-## demos
-
 - [bottom](https://yomotsu.github.io/sheet-draggable/examples/bottom.html)
 - [top](https://yomotsu.github.io/sheet-draggable/examples/top.html)
 - [right](https://yomotsu.github.io/sheet-draggable/examples/right.html)
@@ -18,7 +16,8 @@ It ships only the drag-to-close behavior (no UI), and can be used standalone or 
 ## Usage
 
 ```shell
-$ npm install --save https://www.npmjs.com/package/sheet-draggable```
+$ npm install --save https://www.npmjs.com/package/sheet-draggable
+```
 
 ```javascript
 import { SheetDraggable } from 'sheet-draggable';
@@ -33,12 +32,19 @@ openButtonEl.addEventListener( 'click', () => sheet.show() );
 closeButtonEl.addEventListener( 'click', () => sheet.hide() );
 ```
 
+### Constructor Parameters
+
+| param          | required |     |
+| -------------- | -------- | --- |
+| `element`      | required | HTMLElement - the element to make draggable |
+| `options`      | optional | configuration object for the behavior |
+
 ### Options
 
 | param              | required |     |
 | ------------------ | -------- | --- |
-| `side`             | optional | `'top' \| 'bottom' \| 'left' \| 'right'`. default is `'bottom'` |
-| `handle`           | optional | CSS selector or HTMLElement for the drag handle. default is `undefined`, which means the entire panel is draggable. |
+| `side`             | optional | `'top' \| 'bottom' \| 'left' \| 'right'`. the position of the draggable sheet |
+| `handle`           | optional | HTMLElement for the drag handle. default is `undefined`, which means the entire panel is draggable. |
 | `dismissThreshold` | optional | threshold in px to dismiss the sheet when released. default is `64` |
 | `dragThreshold`    | optional | threshold in px to start dragging. default is `5` |
 
@@ -54,5 +60,5 @@ closeButtonEl.addEventListener( 'click', () => sheet.hide() );
 
 | event         | description                          |
 | ------------- | ------------------------------------ |
-| `show`        | Fired when the sheet is shown        |
-| `hide`        | Fired when the sheet is hidden       |
+| `'show'`        | Fired when the sheet is shown        |
+| `'hide'`        | Fired when the sheet is hidden       |
